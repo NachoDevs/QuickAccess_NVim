@@ -1,4 +1,4 @@
--- ~/.config/nvim/lua/notesPlugin/init.lua
+-- ~/.config/nvim/lua/QuickAccess_NVim/init.lua
 local M = {}
 
 local LOG_FILE = vim.fn.stdpath("config") .. "/log.txt"
@@ -275,15 +275,15 @@ end
 
 -- Commands
 vim.api.nvim_create_user_command("OpenNotes", function()
-  require("notesPlugin").open_workspace()
+  require("QuickAccess_NVim").open_workspace()
 end, {})
 
 vim.api.nvim_create_user_command("AddToNotes", function(opts)
-  require("notesPlugin").add_to_workspace(opts.args)
+  require("QuickAccess_NVim").add_to_workspace(opts.args)
 end, { nargs = 1 })
 
 vim.api.nvim_create_user_command("RemoveFromNotes", function(opts)
-  require("notesPlugin").remove_from_workspace(opts.args)
+  require("QuickAccess_NVim").remove_from_workspace(opts.args)
 end, { nargs = 1 })
 
 return M
